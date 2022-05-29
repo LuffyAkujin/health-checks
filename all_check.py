@@ -18,15 +18,16 @@ def check_disk_full(disk, min_gb, min_percent):
         return True
     return False
 
+#Just adding comment for some testing
 def main():
     if check_reboot():
-        print("Pending Reboot.")
+        print("Pending Reboot! Dude.")
         sys.exit(1)
     if check_disk_full(disk="/", min_gb=2, min_percent=10)
-        print("Disk full.")
+        print("Disk full! Dude.")
         sys.exit(1)
-    
-    print("Everything ok.")
+
+    print("Everything ok! Dude.")
     sys.exit(0)
 
 main()
