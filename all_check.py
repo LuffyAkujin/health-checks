@@ -36,6 +36,7 @@ def check_no_network():
     except:
         return True
 
+#Main function starts here
 def main():
     checks=[
         (check_reboot, "Pending Reboot! Ddue"),
