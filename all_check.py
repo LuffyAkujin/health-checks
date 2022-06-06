@@ -5,10 +5,12 @@ import sys
 import shutil
 import socket
 
+#New check for reboot
 def check_reboot():
     """Returns True if the computer has a pending reboot."""
     return os.path.exists("/run/reboot-required")
 
+#New check if disk over limit
 def check_disk_full(disk, min_gb, min_percent):
     """Return True if there isn't enought disk space, False otherwise."""
     du = shutil.disk_usage(disk)
@@ -20,10 +22,12 @@ def check_disk_full(disk, min_gb, min_percent):
         return True
     return False
 
+#New check if root full
 def check_root_full():
     """Returns True if the root partition is full, False otherwise."""
     return check_disk_full(disk="/", min_gb=2, min_percent=10)
 
+#New check for network
 def check_no_network():
     """Returns True if it fails to resolve Google's URL, False otherwise"""
     try:
